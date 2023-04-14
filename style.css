@@ -1,0 +1,75 @@
+#display {
+	font-family: 'Microsoft JhengHei', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	vertical-align: top;
+}
+
+#controlPanel {
+	width: 30%;
+	min-width: 200px;
+	padding-right: 15px;
+}
+
+#data {
+	width: 70%;
+}
+
+.plusButton {
+	background-color: rgba(103,194,58,.1);
+	border: 1px solid rgba(64,158,255,.2);
+	color: #67c23a;
+	padding: 0px 3px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 12px;
+	vertical-align: center;
+}
+
+.filterSelection {
+	font-size: 14px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.filterSelection span {
+	background-color: rgba(103,194,58,.1);
+	border: 1px solid rgba(64,158,255,.2);
+	color: #67c23a;
+	border-radius: 4px;
+	padding: 0px 4px;
+	margin-right: 4px;
+	line-height: 1.5;
+}
+.filterSelection div {
+	padding-right: 4px;
+	display: inline-block;
+}
+.filterSelection .cancel {
+	cursor: pointer;
+}
+
+#data {
+	font-family: consolas, 'Microsoft JhengHei', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-collapse: collapse;
+}
+#data td, #data th {
+	border: 1px solid black;
+	vertical-align: center;
+	padding: 4px 8px;
+}
+#data .pid, #data .range {
+	text-align: center;
+}
+#data .pid {
+	min-width: 60px;
+}
+#data .range {
+	min-width: 40px;
+}
+#data .tags {
+	min-width: 40px;
+	text-align: left;
+}
+
+.hide {
+	display: none;
+}
