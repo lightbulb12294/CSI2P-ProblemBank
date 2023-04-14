@@ -16,7 +16,6 @@ function updateTable() {
         if(filterCond['cond'].length === 0) continue;
         filterConds.push(filterCond)
     }
-    console.log(filterConds)
     let dataRows = document.getElementsByClassName('dataRow');
     for(let i=0; i<rawProblemData.length; i++) {
         let mask = true;
