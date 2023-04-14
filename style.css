@@ -4,13 +4,12 @@
 }
 
 #controlPanel {
-	width: 25%;
 	width: 250px;
 	padding-right: 15px;
 }
 
 #data {
-	min-width: 75%;
+	min-width: 750px;
 }
 
 [id$='Filter'] select {

@@ -2,7 +2,6 @@ let databaseURL = 'https://script.google.com/macros/s/AKfycbwj7PcB0oIUfhRCm0IaoM
 
 // fetch raw database
 let rawProblemData = await fetch(databaseURL).then(res => res['json']());
-rawProblemData = rawProblemData.sort();
 
 function updateTable() {
     // build filter conditions
@@ -124,6 +123,14 @@ function createTh(text, _class=null) {
 }
 
 // register filter attributes
+rawProblemData = rawProblemData.sort(function (L, R) {
+    function strcmp(s1, s2) {
+        return (s1 === s2) ? 0 : ((s1 > s2) ? 1 : -1);
+    }
+    if(L['range'] !== R['range']) return strcmp(L['range'], R['range']);
+    else if(L['PID'] !== R['PID']) return strcmp(L['PID'], R['PID']);
+    return strcmp(L['tags'], R['tags']);
+});
 let filterRangeList = [];
 let filterTagList = [];
 for(let i=0; i<rawProblemData.length; i++) {
