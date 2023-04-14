@@ -10,8 +10,7 @@
 }
 
 #data {
-	width: 75%;
-	width: 750px;
+	min-width: 75%;
 }
 
 [id$='Filter'] select {
