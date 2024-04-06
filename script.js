@@ -1,4 +1,5 @@
 let databaseURL = 'https://script.google.com/macros/s/AKfycbwj7PcB0oIUfhRCm0IaoMRAU2RUwZcLmqbhevM3_127SFO_f_C9q0WSOQ7Qv_slfOr7/exec';
+let OJIP = 'http://140.114.85.195';
 
 // fetch raw database
 let rawProblemData = await fetch(databaseURL).then(res => res['json']());
@@ -113,7 +114,7 @@ function createEl(elName, _class=null, style=null) {
 }
 function createTd(text, _class=null) {
 	let td =  createEl('td', _class);
-	td.innerText = text;
+	td.innerHTML = text;
 	return td;
 }
 function createTh(text, _class=null) {
@@ -131,6 +132,9 @@ rawProblemData = rawProblemData.sort(function (L, R) {
     else if(L['PID'] !== R['PID']) return strcmp(L['PID'], R['PID']);
     return strcmp(L['tags'], R['tags']);
 });
+for(let i=0; i<rawProblemData.length; i++) {
+	rawProblemData[i]['PID'] = '<a href="' + OJIP + '/problem/' + rawProblemData[i]['PID'] + '">' + rawProblemData[i]['PID'] + '</a>';
+}
 let filterRangeList = [];
 let filterTagList = [];
 for(let i=0; i<rawProblemData.length; i++) {
